@@ -1,16 +1,16 @@
 # Experiment 1: Entity-Relationship (ER) Diagram
 
-## 🎯 Objective:
+## Objective:
 To understand and apply the concepts of ER modeling by creating an ER diagram for a real-world application.
 
-## 📚 Purpose:
+## Purpose:
 The purpose of this workshop is to gain hands-on experience in designing ER diagrams that visually represent the structure of a database including entities, relationships, attributes, and constraints.
 
 ---
 
-## 🧪 Choose One Scenario:
+## Choose One Scenario:
 
-### 🔹 Scenario 1: University Database
+### Scenario 1: University Database
 Design a database to manage students, instructors, programs, courses, and student enrollments. Include prerequisites for courses.
 
 **User Requirements:**
@@ -23,7 +23,7 @@ Design a database to manage students, instructors, programs, courses, and studen
 
 ---
 
-### 🔹 Scenario 2: Hospital Database
+### Scenario 2: Hospital Database
 Design a database for patient management, appointments, medical records, and billing.
 
 **User Requirements:**
@@ -35,7 +35,7 @@ Design a database for patient management, appointments, medical records, and bil
 
 ---
 
-## 📝 Tasks:
+## Tasks:
 1. Identify entities, relationships, and attributes.
 2. Draw the ER diagram using any tool (draw.io, dbdiagram.io, hand-drawn and scanned).
 3. Include:
@@ -45,7 +45,7 @@ Design a database for patient management, appointments, medical records, and bil
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
 
-# ER Diagram Submission - Student Name
+# ER Diagram Submission - Gokkul M
 
 ## Scenario Chosen:
 University / Hospital (choose one)
