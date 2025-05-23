@@ -45,21 +45,120 @@ Design a database for patient management, appointments, medical records, and bil
 University / Hospital (choose one)
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![image](https://github.com/user-attachments/assets/413e3ea9-7203-4750-8962-0278edef0c82)
+![image](https://github.com/user-attachments/assets/e0b31c55-c245-4abf-b990-111dbe53dd60)
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
+- Department - Dept id, Dept name, Head of Department
+- Program - Program id, Program name
+- Student - Student id, Date of birth, Email, Name, Phone number
+- Course - Credits, Department, Course id, Course name, Course description
+- Instructor - Name, Department, Mobile number, Office location, Email, Instructor id
 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
+Relationship 1: Department - Program
+Cardinality: 1 Department → many Programs (1:N)
+
+Participation:
+
+Department: Total
+
+Program: Total
+
+Relationship 2: Program - Student
+Cardinality: 1 Program → many Students (1:N)
+
+Participation:
+
+Program: Total
+
+Student: Total
+
+Relationship 3: Student - Course (Enrolled in)
+Cardinality: Many Students → Many Courses (M:N)
+
+Participation:
+
+Student: Partial
+
+Course: Partial
+
+Relationship 4: Course - Instructor (Taught by)
+Cardinality: 1 Instructor → many Courses (1:N)
+
+Participation:
+
+Instructor: Partial
+
+Course: Partial
 
 ## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+1. Prerequisite Modeling:
+Idea: Some courses may require students to complete other courses first.
+
+Modeling:
+
+Add a "Prerequisite" relationship between Course and Course itself.
+
+It will be a binary relationship like:
+
+One Course (prerequisite) → another Course (dependent).
+
+Cardinality:
+
+0 or 1 prerequisite for a course (Optional, 0:1).
+
+2. Billing Modeling:
+Idea: Students pay based on enrolled courses (credits or fixed fees).
+
+Modeling:
+
+Add a Billing entity.
+
+Connect Student ↔ Billing and Course ↔ Billing.
+
+Billing will store:
+
+Billing ID
+
+Amount
+
+Payment Date
+
+Payment Status
+
+Cardinality:
+
+1 Student → Many Billing Records (1:N)
+
+1 Course → Many Billing Records (1:N)
 
 ## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+Entities like Department, Program, Student, Course, and Instructor were chosen because they represent real-world objects we need to track separately, each with their own properties (attributes).
+
+Relationships like offers, enrolled by, enrolled in, and taught by were used to properly connect the entities:
+
+Department offers Program: Logical because programs are under departments.
+
+Program enrolled by Student: Students must belong to a program.
+
+Student enrolled in Course: Students register for multiple courses.
+
+Course taught by Instructor: Instructors are responsible for teaching courses.
+
+Assumptions:
+
+Every Program must belong to exactly one Department.
+
+A Student must be enrolled in one Program but can enroll in multiple Courses.
+
+Each Course must belong to a Department.
+
+Instructors are assigned based on department expertise but can teach multiple courses.
+
+Billing and Prerequisites (if added) are optional extensions for real-world system needs.
+
 
 ## RESULT
 Thus, the ER diagram for the hospital management system was successfully designed, and the entities, relationships, and constraints were clearly represented.
