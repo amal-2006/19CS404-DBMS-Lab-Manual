@@ -6,8 +6,6 @@ To understand and apply the concepts of ER modeling by creating an ER diagram fo
 ## Purpose:
 The purpose of this workshop is to gain hands-on experience in designing ER diagrams that visually represent the structure of a database including entities, relationships, attributes, and constraints.
 
----
-
 ## Choose One Scenario:
 
 ### Scenario 1: University Database
@@ -21,8 +19,6 @@ Design a database to manage students, instructors, programs, courses, and studen
 - Track course enrollments by students and enrollment date.
 - Add support for prerequisites (some courses require others).
 
----
-
 ### Scenario 2: Hospital Database
 Design a database for patient management, appointments, medical records, and billing.
 
@@ -32,8 +28,6 @@ Design a database for patient management, appointments, medical records, and bil
 - Appointments with reason, time, patient-doctor link.
 - Medical records with treatments, diagnosis, test results.
 - Billing and payment details for each appointment.
-
----
 
 ## Tasks:
 1. Identify entities, relationships, and attributes.
@@ -56,12 +50,10 @@ University / Hospital (choose one)
 ## Entities and Attributes:
 - Entity1: Attributes
 - Entity2: Attributes
-...
 
 ## Relationships and Constraints:
 - Relationship1 (Cardinality, Participation)
 - Relationship2 (Cardinality, Participation)
-...
 
 ## Extension (Prerequisite / Billing):
 - Explain how you modeled prerequisites or billing.
