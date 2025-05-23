@@ -62,101 +62,76 @@ Cardinality: 1 Department → many Programs (1:N)
 
 Participation:
 
-Department: Total
-
-Program: Total
+   Department: Total
+   Program: Total
 
 Relationship 2: Program - Student
 Cardinality: 1 Program → many Students (1:N)
 
 Participation:
 
-Program: Total
-
-Student: Total
+   Program: Total
+   Student: Total
 
 Relationship 3: Student - Course (Enrolled in)
 Cardinality: Many Students → Many Courses (M:N)
 
 Participation:
 
-Student: Partial
-
-Course: Partial
+   Student: Partial
+   Course: Partial
 
 Relationship 4: Course - Instructor (Taught by)
 Cardinality: 1 Instructor → many Courses (1:N)
 
 Participation:
 
-Instructor: Partial
-
-Course: Partial
+   Instructor: Partial
+   Course: Partial
 
 ## Extension (Prerequisite / Billing):
-1. Prerequisite Modeling:
-Idea: Some courses may require students to complete other courses first.
+**1. Prerequisite Modeling:
+Idea:** Some courses may require students to complete other courses first.
 
-Modeling:
-
-Add a "Prerequisite" relationship between Course and Course itself.
-
+**Modeling:** Add a "Prerequisite" relationship between Course and Course itself.
 It will be a binary relationship like:
-
 One Course (prerequisite) → another Course (dependent).
 
-Cardinality:
+**Cardinality:** 0 or 1 prerequisite for a course (Optional, 0:1).
 
-0 or 1 prerequisite for a course (Optional, 0:1).
+**2. Billing Modeling:**
+**Idea:** Students pay based on enrolled courses (credits or fixed fees).
 
-2. Billing Modeling:
-Idea: Students pay based on enrolled courses (credits or fixed fees).
-
-Modeling:
-
-Add a Billing entity.
-
+**Modeling:** Add a Billing entity.
 Connect Student ↔ Billing and Course ↔ Billing.
 
-Billing will store:
+**Billing will store:**
 
-Billing ID
+   Billing ID
+   Amount
+   Payment Date
+   Payment Status
 
-Amount
-
-Payment Date
-
-Payment Status
-
-Cardinality:
+**Cardinality:**
 
 1 Student → Many Billing Records (1:N)
-
 1 Course → Many Billing Records (1:N)
 
 ## Design Choices:
+
 Entities like Department, Program, Student, Course, and Instructor were chosen because they represent real-world objects we need to track separately, each with their own properties (attributes).
-
 Relationships like offers, enrolled by, enrolled in, and taught by were used to properly connect the entities:
-
 Department offers Program: Logical because programs are under departments.
-
 Program enrolled by Student: Students must belong to a program.
-
 Student enrolled in Course: Students register for multiple courses.
-
 Course taught by Instructor: Instructors are responsible for teaching courses.
 
-Assumptions:
+**Assumptions:**
 
 Every Program must belong to exactly one Department.
-
 A Student must be enrolled in one Program but can enroll in multiple Courses.
-
 Each Course must belong to a Department.
-
 Instructors are assigned based on department expertise but can teach multiple courses.
-
 Billing and Prerequisites (if added) are optional extensions for real-world system needs.
 
 
